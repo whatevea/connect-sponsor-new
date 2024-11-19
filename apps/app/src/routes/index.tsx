@@ -13,7 +13,7 @@ export const router: ReturnType<typeof createBrowserRouter> =
       path: '/',
       element: <ProtectedLayout />,
       children: [
-        { path: ROUTE_PATHS.DASHBOARD, element: <DashboardPage /> },
+        { index: true, element: <DashboardPage /> },
         { path: ROUTE_PATHS.SETTINGS, element: <SettingsPage /> },
         { path: ROUTE_PATHS.PROFILE, element: <ProfilePage /> },
       ],

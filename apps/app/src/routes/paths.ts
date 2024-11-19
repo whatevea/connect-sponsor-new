@@ -1,7 +1,7 @@
 export const ROUTE_PATHS = Object.freeze({
   LOGIN: '/login',
 
-  DASHBOARD: '/dashboard',
+  DASHBOARD: '/',
   PROFILE: '/profile',
   SETTINGS: '/settings',
 });
