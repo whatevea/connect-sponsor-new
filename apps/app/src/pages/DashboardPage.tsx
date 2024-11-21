@@ -1,3 +1,9 @@
+import { Typography } from '@mui/material';
+
 export default function DashboardPage() {
-  return <div>DashboardPage</div>;
+  return (
+    <div>
+      <Typography variant='h5'>Dashboard Page</Typography>
+    </div>
+  );
 }

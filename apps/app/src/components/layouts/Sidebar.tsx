@@ -1,8 +1,57 @@
-import { Box, Typography } from '@mui/material';
+import { useLocation } from 'react-router-dom';
+import { Box, List, Typography } from '@mui/material';
+import {
+  Button,
+  ContentIcon,
+  DashboardIcon,
+  Link,
+  ProPlanIcon,
+  SearchIcon,
+  SidebarItem,
+  SponsorshipIcon,
+  ToolsIcon,
+  YoutubeIcon,
+} from '@repo/ui';
 import { CONNECT_SPONSOR_TOKEN } from '../../constants';
-import { Button, Link } from '@repo/ui';
+import { ROUTE_PATHS } from '../../routes/paths';
+
+export const sidebarData = [
+  {
+    label: 'Dashboard',
+    icon: <DashboardIcon sx={{ fontSize: '18px' }} />,
+    route: ROUTE_PATHS.DASHBOARD,
+  },
+  {
+    label: 'Startup Plan',
+    icon: <SearchIcon />,
+    route: ROUTE_PATHS.STARTUP_PLAN,
+  },
+  { label: 'Pro Plan', icon: <ProPlanIcon />, route: ROUTE_PATHS.PRO_PLAN },
+  {
+    label: 'Featured Sponsorship Opportunities',
+    icon: <SponsorshipIcon />,
+    route: ROUTE_PATHS.FEATURED_SPONSORSHIP_OPPORTUNITIES,
+  },
+  {
+    label: 'Featured Content Entrepreneurs',
+    icon: <ContentIcon />,
+    route: ROUTE_PATHS.FEATURED_CONTENT_OPPORTUNITIES,
+  },
+  {
+    label: 'Partner apps, tools & courses',
+    icon: <ToolsIcon />,
+    route: ROUTE_PATHS.PARTNER_APPS_TOOLS_COURSES,
+  },
+  {
+    label: 'Suggest Youtube Channel',
+    icon: <YoutubeIcon />,
+    route: ROUTE_PATHS.SUGGEST_YOUTUBE_CHANNEL,
+  },
+];
 
 export default function Sidebar() {
+  const location = useLocation();
+
   return (
     <Box
       sx={{
@@ -33,7 +82,24 @@ export default function Sidebar() {
         </Box>
       </Box>
 
-      <Box sx={{ width: '100%', mt: 'auto', padding: '0 10px' }}>
+      <List
+        sx={{
+          p: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+        }}
+      >
+        {sidebarData.map((item, index) => (
+          <SidebarItem
+            key={index}
+            isActive={location.pathname === item.route}
+            item={item}
+          />
+        ))}
+      </List>
+
+      <Box sx={{ width: '100%', mt: 'auto', padding: '0 20px' }}>
         <Button
           onClick={() => localStorage.removeItem(CONNECT_SPONSOR_TOKEN)}
           variant='outlined'

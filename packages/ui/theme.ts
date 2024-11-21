@@ -16,6 +16,7 @@ export const theme: Theme = createTheme({
     },
     text: {
       primary: '#FFFFFF',
+      secondary: '#FFA51F',
     },
     error: {
       main: '#f44336',
@@ -23,6 +24,7 @@ export const theme: Theme = createTheme({
   },
   typography: {
     fontFamily: `'Gilroy', sans-serif`,
+
     h1: {
       fontSize: '54px',
       fontWeight: 800,
