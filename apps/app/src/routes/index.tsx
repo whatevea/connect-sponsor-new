@@ -1,28 +1,30 @@
-import { createBrowserRouter } from 'react-router-dom';
-import ProtectedLayout from '../components/layouts/ProtectedLayout';
-import LoginPage from '../pages/auth/LoginPage';
-import { ROUTE_PATHS } from './paths';
-import DashboardPage from '../pages/DashboardPage';
-import PricePage from '../pages/PricePage';
-import AccountPage from '../pages/AccountPage';
-import TeamPage from '../pages/TeamPage';
-import FaqPage from '../pages/FaqPage';
-import ContactUsPage from '../pages/ContactUsPage';
-import AffiliatePage from '../pages/AffiliatePage';
-import ApiPage from '../pages/ApiPage';
-import ResellerPage from '../pages/ResellerPage';
-import StartupPlanPage from '../pages/StartupPlanPage';
-import ProPlanPage from '../pages/ProPlanPage';
-import FeaturedSponsorshipOpportunitiesPage from '../pages/FeaturedSponsorshipPage';
-import FeaturedContentOpportunitesPage from '../pages/FeaturedContentOppotunities';
-import PartnerAppsToolsCoursesPage from '../pages/PartnerAppsToolsCoursesPage';
-import SuggestYoutubeChannelPage from '../pages/SuggestYoutubeChannel';
+import { createBrowserRouter } from "react-router-dom";
+import ProtectedLayout from "../components/layouts/ProtectedLayout";
+import LoginPage from "../pages/auth/LoginPage";
+import { ROUTE_PATHS } from "./paths";
+import DashboardPage from "../pages/DashboardPage";
+import PricePage from "../pages/PricePage";
+import AccountPage from "../pages/AccountPage";
+import TeamPage from "../pages/TeamPage";
+import FaqPage from "../pages/FaqPage";
+import ContactUsPage from "../pages/ContactUsPage";
+import AffiliatePage from "../pages/AffiliatePage";
+import ApiPage from "../pages/ApiPage";
+import ResellerPage from "../pages/ResellerPage";
+import StartupPlanPage from "../pages/StartupPlanPage";
+import ProPlanPage from "../pages/ProPlanPage";
+import FeaturedSponsorshipOpportunitiesPage from "../pages/FeaturedSponsorshipPage";
+import FeaturedContentOpportunitesPage from "../pages/FeaturedContentOppotunities";
+import PartnerAppsToolsCoursesPage from "../pages/PartnerAppsToolsCoursesPage";
+import SuggestYoutubeChannelPage from "../pages/SuggestYoutubeChannel";
+import ForgetPasswordPage from "../pages/auth/ForgetPasswordPage";
 
 export const router: ReturnType<typeof createBrowserRouter> =
   createBrowserRouter([
     { path: ROUTE_PATHS.LOGIN, element: <LoginPage /> },
+    { path: ROUTE_PATHS.FORGET_PASSWORD, element: <ForgetPasswordPage /> },
     {
-      path: '/',
+      path: "/",
       element: <ProtectedLayout />,
       children: [
         { index: true, element: <DashboardPage /> },
