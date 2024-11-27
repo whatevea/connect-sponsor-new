@@ -76,15 +76,7 @@ export const theme: Theme = createTheme({
       lineHeight: '12px',
     },
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-    },
-  },
+  
   components: {
     MuiButton: {
       variants: [
@@ -143,56 +135,6 @@ export const theme: Theme = createTheme({
       ],
     },
 
-    MuiFormControl: {
-      styleOverrides: {
-        root: {
-          width: '100%',
-          '&.Mui-focused': {
-            borderColor: 'transparent',
-          },
-        },
-      },
-    },
-    // Customize InputLabel
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          fontWeight: '600',
-          fontSize: '15px',
-          lineHeight: '18px',
-          color: '#FFFFFF',
-          marginBottom: '4px',
-          '&.Mui-focused': {
-            color: '#FFFFFF',
-          },
-        },
-      },
-    },
-    // Customize Input
-    MuiInput: {
-      styleOverrides: {
-        root: {
-          fontWeight: 400,
-          fontSize: '13px',
-          lineHeight: '16px',
-          color: '#333333',
-          padding: '15px 17px',
-          background: '#FFFFFF',
-          borderRadius: '9px',
-          marginTop: '0 !important',
-          '&:before': {
-            display: 'none',
-            borderBottom: 'none',
-          },
-          '&:after': {
-            display: 'none',
-            borderBottom: 'none',
-          },
-        },
-        input: {
-          padding: '0',
-        },
-      },
-    },
+    
   },
 });
