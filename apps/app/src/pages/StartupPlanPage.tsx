@@ -1,5 +1,7 @@
 import { Typography,Box,Link } from '@mui/material';
-
+const demoList = [
+  { name: "Google Document", date: "2023/2/23" }]
+  
 export default function StartupPlanPage() {
   return (
     <div>
@@ -33,26 +35,29 @@ export default function StartupPlanPage() {
           Date
         </Typography>
       </Box>
+      
+        {demoList.map((item) => (
       <Box
-        mt={2}
-        bgcolor="rgba(255, 255, 255, 0.1)"
-        borderRadius={2}
-        p={2}
-        color="#CAC4C4"
-      >
-        <Box display="flex" justifyContent="space-between"     sx={{
-        '& .MuiTypography-root': {
-          fontSize: '18px',
-        },
-      }}>
-          <Typography variant="body1" flex={2/3}>Google Document</Typography>
-          <Typography variant="body1" flex={1/3}>2023/123/12</Typography>
-        </Box>
+      mt={2}
+      bgcolor="rgba(255, 255, 255, 0.1)"
+      borderRadius={2}
+      p={2}
+      color="#CAC4C4"
+    >
+      <Box display="flex" justifyContent="space-between" key={item.name} sx={{
+            '& .MuiTypography-root': {
+              fontSize: '18px',
+            },
+          }}>
+            <Typography variant="body1" flex={2/3}>{item.name}</Typography>
+            <Typography variant="body1" flex={1/3}>{item.date}</Typography>
+          </Box>
       </Box>
+        ))
+        }
       <Box mt={2} color="#fff">
         <Typography variant="body1" marginY={2}>
-          This content is for pro members only.
-        </Typography>
+        This content is for Pro plan & Enterprise members only        </Typography>
         <Typography variant="body1">
           Please{' '}
           <Link href="#" underline="hover" color="#FFA51F">
@@ -62,11 +67,6 @@ export default function StartupPlanPage() {
         </Typography>
       </Box>
     </Box>
-
-
-
-
-
 </Box>
     </div>
   );
