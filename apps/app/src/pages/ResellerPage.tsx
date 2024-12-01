@@ -33,15 +33,19 @@ export default function ResellerPage() {
                         justifyContent: 'center'
                     }}
                 >
-                    <img
-                        src="https://placeholder.co/48x38/FFA51F/white"
-                        alt="closingTag.icon"
-                        style={{
-                            borderRadius: 4,
-                            width: 48,
-                            height: 38
+                    <Typography
+                        sx={{
+                            fontWeight: 800,
+                            borderRadius: '9999px',
+                            fontSize: '2.25rem', // equivalent to text-4xl
+                            padding: ' 1.5rem',
+                            backgroundColor: '#E9901A',
+                            color: 'white',
+                            display: 'inline-block'
                         }}
-                    />
+                    >
+                        $
+                    </Typography>
                 </Avatar>
             </Box>
 
