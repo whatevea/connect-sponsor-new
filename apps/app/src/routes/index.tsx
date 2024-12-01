@@ -18,6 +18,7 @@ import FeaturedContentOpportunitesPage from "../pages/FeaturedContentOppotunitie
 import PartnerAppsToolsCoursesPage from "../pages/PartnerAppsToolsCoursesPage";
 import SuggestYoutubeChannelPage from "../pages/SuggestYoutubeChannel";
 import ForgetPasswordPage from "../pages/auth/ForgetPasswordPage";
+import CancellationPage from "../components/CancelComponent";
 
 export const router: ReturnType<typeof createBrowserRouter> =
   createBrowserRouter([
@@ -55,6 +56,7 @@ export const router: ReturnType<typeof createBrowserRouter> =
         { path: ROUTE_PATHS.AFFILIATE, element: <AffiliatePage /> },
         { path: ROUTE_PATHS.API, element: <ApiPage /> },
         { path: ROUTE_PATHS.RESELLER, element: <ResellerPage /> },
+        { path: ROUTE_PATHS.CANCEL, element: <CancellationPage /> },
       ],
     },
   ]);
