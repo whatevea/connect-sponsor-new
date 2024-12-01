@@ -1,9 +1,6 @@
-import { Typography } from '@mui/material';
-
+import FAQComponent from '../components/FaqComponent';
 export default function FaqPage() {
-  return (
-    <div>
-      <Typography variant='h5'>Faq Page</Typography>
-    </div>
-  );
+    return (
+        <FAQComponent />
+    );
 }

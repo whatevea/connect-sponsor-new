@@ -20,4 +20,7 @@ export const ROUTE_PATHS = Object.freeze({
   FEATURED_CONTENT_OPPORTUNITIES: "/featured-content-opportunities",
   PARTNER_APPS_TOOLS_COURSES: "/partner-apps-tools-courses",
   SUGGEST_YOUTUBE_CHANNEL: "/suggest-youtube-channel",
+  //will need to remove this later on 
+    CANCEL: "/cancel",
+  
 });
