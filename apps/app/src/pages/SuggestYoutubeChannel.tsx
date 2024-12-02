@@ -21,8 +21,8 @@ export default function SuggestYoutubeChannelPage() {
                 <Typography sx={{ marginY: 2 }}>Suggest a YouTube channel you'd like us to track and stay updated on. Simply provide the channel's name, URL, and category.</Typography>
 
 
-                <Box sx={{ display: { xs: 'block', sm: 'flex' }, gap: 2 }}>
-                    <Box sx={{ width: { xs: '100%', sm: '50%' } }}>
+                <Box sx={{ display: { xs: 'block', sm: 'flex' }, gap: 3 }}>
+                    <Box sx={{ width: { xs: '90%', sm: '50%' } }}>
                         <Typography color="inherit" my={1}>
                             Channel Name
                         </Typography>
@@ -63,8 +63,8 @@ export default function SuggestYoutubeChannelPage() {
 
                     </Box>
                 </Box>
-                <Box sx={{ display: { xs: 'block', sm: 'flex' }, gap: 2 }}>
-                    <Box sx={{ width: { xs: '100%', sm: '50%' } }}>
+                <Box sx={{ display: { xs: 'block', sm: 'flex' }, gap: 3 }}>
+                    <Box sx={{ width: { xs: '90%', sm: '50%' } }}>
                         <Typography color="inherit" my={1}>
                             Category
                             <Typography
@@ -132,7 +132,7 @@ export default function SuggestYoutubeChannelPage() {
                         fullWidth
                         multiline
                         rows={10}
-                        placeholder="For assistance regarding your sites, please provide the site's name together with your question(s)."
+                        placeholder="Type Here"
                         variant="outlined"
                         sx={{
                             backgroundColor: 'white',
@@ -157,7 +157,7 @@ export default function SuggestYoutubeChannelPage() {
                         sx={{
                             backgroundColor: '#E9901A',
                             borderRadius: 6,
-                            px: 2,
+                            px: 5,
                             '&:hover': {
                                 backgroundColor: '#D88019'
                             }

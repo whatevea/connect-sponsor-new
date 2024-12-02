@@ -1,279 +1,516 @@
+import { Box, Typography } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
+import CloseIcon from "@mui/icons-material/Close";
 
-import React from "react";
-import {
-    Box,
-    Button,
-    Typography,
-    TextField,
-    Stack,
-    Card,
-    CardContent,
-} from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
-const PricePage: React.FC = () => {
+export default function PricePage() {
     return (
-        <main>
-            <Box display="flex" gap={5} py={5} fontSize="1.25rem">
-                <Button
-                    variant="outlined"
-                    endIcon={<AccountCircleIcon />}
-                    sx={{ borderRadius: "16px", px: 3, py: 1 }}
+        <Box>
+            <Box
+                sx={{
+                    display: "flex",
+                    gap: "8px",
+                    marginBottom: "10px",
+                    // alignItems: "center",
+                }}
+            >
+                <img
+                    src="icons/images/Discount.png"
+                    alt="discount logo"
+                    style={{
+                        width: "20px",
+                        height: "20px",
+                        borderRadius: "50%",
+                        marginTop: "12px",
+                    }}
+                />
+                <Box
+                    sx={{
+                        width: "2px",
+                        background: "radial-gradient(circle,  #FFFFFF 0%, #191153 100%)",
+                    }}
+                ></Box>
+                <Typography
+                    variant="h6"
+                    sx={{ display: "flex", alignItems: "center", gap: "5px" }}
                 >
-                    Account
-                </Button>
-
-                <Button
-                    variant="contained"
-                    endIcon={<AccountCircleIcon />}
-                    sx={{ borderRadius: "16px", backgroundColor: "#E9901A", px: 3, py: 1 }}
-                >
-                    Billing
-                </Button>
+                    Discount code applied!: Get{" "}
+                    <p style={{ color: "#FFA114" }}>
+                        50% off
+                    </p>
+                    {" "}
+                    the 1st year on all plans.
+                </Typography>
             </Box>
+            <Box style={{ display: "flex", gap: "14px" }} sx={{ marginTop: "18px" }}>
+                <FreePlan />
+                <StartupPlan />
+                <ProPlan />
+                <EnterprisePlan />
+            </Box>
+            {/* <Typography variant="h5">Plan & Pricing Page</Typography> */}
+        </Box>
+    );
+}
 
-            <Typography variant="h3" fontWeight="bold" gutterBottom>
-                Plan and Billing
+const FreePlan = () => {
+    const freePlan = {
+        name: "Free",
+        price: "$0.00",
+        keyFeatures: [
+            "1,000+ most active Youtube Sponsors in 30 languages",
+            "20+ Data Points Per Sponsor",
+            "CEO Contact Details & Social Media Profiles",
+            "LinkedIn & Twitter/X Profiles",
+            "Additional Decision Maker Details (CFOs, CMOs, Head Of Partnerships, Etc.)",
+            "After day 7: Trial ends and your startup plan subscription starts",
+            "1 Team Member",
+        ],
+        "What You're Missing": [
+            "Direct Contact Details Of The Top 10,000 YouTube Channel Sponsors in 30 languages Every Month",
+            "60,000+ Database Of All Historical Sponsors",
+            "First Access To New Sponsors",
+            "Limited Support",
+            "Unlimited Team Members",
+        ],
+    };
+
+    return (
+        <Box
+            sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.10)",
+                padding: "20px",
+                borderRadius: "16px",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+            }}
+        >
+            <Typography
+                sx={{
+                    fontFamily: "Roboto, sans-serif",
+                    fontWeight: "400",
+                    marginBottom: "25px",
+                    fontSize: "20px",
+                }}
+            >
+                {freePlan?.name}
             </Typography>
-
-            <Box display="flex">
-                {/* Card Information Form */}
-                <Card
+            <Typography sx={{ marginBottom: 5, display: "flex", gap: "10px" }}>
+                <Typography
+                    variant="body1"
+                    component="span"
                     sx={{
-                        width: "50%",
-                        border: 2,
-                        borderRadius: "16px",
-                        backgroundColor: "#191153",
-                        color: "white",
-                        py: 2,
-                        textAlign: "center",
+                        fontFamily: "Roboto, sans-serif",
+                        fontWeight: "bolder",
+                        fontSize: "32px",
                     }}
                 >
-                    <CardContent>
-                        <Typography variant="h4" fontWeight="bold" py={2}>
-                            Card Information
-                        </Typography>
-                        <Typography variant="body1" gutterBottom>
-                            You can change your Card information in the field below
-                        </Typography>
-                        <Box
-                            sx={{
-                                backgroundColor: "white",
-                                borderRadius: "8px",
-                                py: 1.5,
-                                mb: 1.5,
-                            }}>
-                            <TextField
-                                placeholder="5294 9728 4444 2856"
-                                variant="standard"
-                                sx={{
-                                    width: "80%",
-                                    outline: "none",
-                                    input: { color: "black" },
-                                    '& .MuiInput-underline:before': {
-                                        borderBottom: 'none',
-                                    },
-                                    '& .MuiInput-underline:after': {
-                                        borderBottom: 'none',
-                                    },
-                                    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                                        borderBottom: 'none',
-                                    }
-                                }}
-                            />
-                            <Box component="img" src="https://placehold.co/40x30/red/white" alt="Invoice" mx="auto" />
-                        </Box>
-
-                        <Stack
-                            direction="row"
-                            spacing={2}
-                            pb={3}
-                            justifyContent="space-between"
-                        >
-                            <TextField
-                                fullWidth
-                                placeholder="10/29"
-                                variant="filled"
-                                sx={{
-                                    input: { color: "black" },
-                                    borderRadius: "8px",
-                                    backgroundColor: "white"
-                                }}
-                            />
-                            <TextField
-                                fullWidth
-                                placeholder="527"
-                                variant="filled"
-                                sx={{
-                                    marginX: 3,
-                                    borderRadius: "8px",
-                                    input: { color: "black" },
-                                    backgroundColor: "white"
-                                }}
-                            />
-                        </Stack>
-
-                        <Typography variant="body1" gutterBottom sx={{ textAlign: "center" }}>
-                            Be Charged during 7 days Free Trials
-                        </Typography>
-
-                        <Typography variant="h4" fontWeight="bold" py={2}>
-                            Billing Information
-                        </Typography>
-                        <Typography variant="body1" gutterBottom my={2}>
-                            You can change your billing information in the field below
-                        </Typography>
-
-                        <Box pb={2}>
-                            <Stack spacing={2} pb={2}>
-                                <Stack direction="row" spacing={2}>
-                                    <Box width="50%">
-                                        <Typography textAlign="left" mb={1}>Full Address *</Typography>
-                                        <TextField
-                                            fullWidth
-                                            placeholder="Enter Address"
-                                            variant="filled"
-                                            sx={{
-                                                input: { color: "black" },
-                                                borderRadius: "8px",
-                                                backgroundColor: "white"
-                                            }}
-                                        />
-                                    </Box>
-                                    <Box width="50%">
-                                        <Typography textAlign="left" mb={1}>City Name *</Typography>
-                                        <TextField
-                                            fullWidth
-                                            placeholder="Enter City"
-                                            variant="filled"
-                                            sx={{
-                                                input: { color: "black" },
-                                                borderRadius: "8px",
-                                                backgroundColor: "white"
-                                            }}
-                                        />
-                                    </Box>
-                                </Stack>
-
-                                <Stack direction="row" spacing={2}>
-                                    <Box width="75%">
-                                        <Typography textAlign="left" mb={1}>State/Province *</Typography>
-                                        <TextField
-                                            fullWidth
-                                            placeholder="Enter State/Province"
-                                            variant="filled"
-                                            sx={{
-                                                input: { color: "black" },
-                                                borderRadius: "8px",
-                                                backgroundColor: "white"
-                                            }}
-                                        />
-                                    </Box>
-                                    <Box width="25%">
-                                        <Typography textAlign="left" mb={1}>Zip Code *</Typography>
-                                        <TextField
-                                            fullWidth
-                                            placeholder="Enter Zip Code"
-                                            variant="filled"
-                                            sx={{
-                                                input: { color: "black" },
-                                                borderRadius: "8px",
-                                                backgroundColor: "white"
-                                            }}
-                                        />
-                                    </Box>
-                                </Stack>
-
-                                <Box>
-                                    <Typography textAlign="left" mb={1}>Country</Typography>
-                                    <TextField
-                                        fullWidth
-                                        placeholder="Select Country"
-                                        variant="filled"
-                                        sx={{
-                                            input: { color: "black" },
-                                            borderRadius: "8px",
-                                            backgroundColor: "white"
-                                        }}
-                                    />
-                                </Box>
-                            </Stack>
-
-                            <Box display="flex" justifyContent="center" py={2}>
-                                <Button
-                                    variant="contained"
-                                    sx={{ backgroundColor: "#E9901A", borderRadius: "24px", px: 5 }}
-                                >
-                                    Save Changes
-                                </Button>
-                            </Box>
-                        </Box>
-                    </CardContent>
-                </Card>
-
-                {/* Invoice Preview Section */}
-                <Card
-                    sx={{
-                        width: "50%",
-                        border: 2,
-                        borderRadius: "16px",
-                        background: "linear-gradient(to right, #191153, #191153)",
-                        color: "white",
-                        pt: 2,
-                        textAlign: "center",
-                    }}
-                >
-                    <CardContent>
-                        <Typography variant="h4" fontWeight="bold" py={2}>
-                            Upcoming Invoice
-                        </Typography>
-                        <Typography variant="body1" gutterBottom>
-                            This is the preview of the invoice that will be billed
-                        </Typography>
-                        <Box
-                            sx={{
-                                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                                borderRadius: "12px",
-                                p: 3,
-                                mx: 2,
-                                my: 3,
-                            }}
-                        >
-                            <Box
-                                display="flex"
-                                justifyContent="space-between"
-                                borderBottom={2}
-                                pb={2}
-                                color="orange"
-                            >
-                                <Typography>Description</Typography>
-                                <Typography>Amount</Typography>
-                            </Box>
-                            <Box display="flex" justifyContent="space-between" py={2}>
-                                <Typography>Starter 10+ VAT@20%</Typography>
-                                <Typography color="orange">$29</Typography>
-                            </Box>
-                            <Box display="flex" justifyContent="space-between" py={2}>
-                                <Typography>Total Discount</Typography>
-                                <Typography color="orange">$0</Typography>
-                            </Box>
-                            <Box display="flex" justifyContent="space-between" py={2}>
-                                <Typography>Total</Typography>
-                                <Typography color="orange">$29</Typography>
-                            </Box>
-                        </Box>
-                        <Typography variant="h4" fontWeight="bold" py={2}>
-                            Paid Invoice
-                        </Typography>
-                        <Typography gutterBottom>
-                            You can download your paid invoices here
-                        </Typography>
-                        <Box component="img" src="https://placehold.co/256" alt="Invoice" mx="auto" />
-                    </CardContent>
-                </Card>
+                    {freePlan?.price}
+                </Typography>
+                <Typography variant="body1" component="span">
+                    /week
+                </Typography>
+            </Typography>
+            <Box>
+                {freePlan?.keyFeatures?.map((item, index) => (
+                    <Box
+                        key={index}
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            marginBottom: "10px",
+                            lineHeight: "1.5",
+                            fontFamily: "Roboto, sans-serif",
+                            fontWeight: "400",
+                        }}
+                    >
+                        <CheckIcon
+                            sx={{ color: "#FFA114", width: "17px", height: "17px" }}
+                        />
+                        {item}
+                    </Box>
+                ))}
             </Box>
-        </main>
+            <hr style={{ margin: "10px 0" }} />
+            <Box>
+                <Typography sx={{ color: "red", marginBottom: "10px" }}>
+                    What You're Missing
+                </Typography>
+                {freePlan["What You're Missing"]?.map((item, index) => (
+                    <Box
+                        key={index}
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            marginBottom: "10px",
+                            lineHeight: "1.5",
+                            fontFamily: "Roboto, sans-serif",
+                            fontWeight: "400",
+                        }}
+                    >
+                        <CloseIcon sx={{ width: "17px", height: "17px" }} />
+                        {item}
+                    </Box>
+                ))}
+            </Box>
+        </Box>
     );
 };
 
-export default PricePage;
+const StartupPlan = () => {
+    const startupPlan = {
+        name: "Startup Plan",
+        price: "$247",
+        keyFeatures: [
+            "Direct Contact Details Of The Top 10,000 YouTube Channel Sponsors in 30 languages Every Month",
+            "20+ Data Points Per Sponsor",
+            "CEO Contact Details & Social Media Profiles",
+            "Additional Decision Maker Details (CFOs, CMOs, Head Of Partnerships, Etc.)",
+            "First Access To New Sponsors",
+            "Email Support",
+            "Access To Our Entire Network Of Partners Who Have Actively Contacted Us To Be Your Long-Term Partner",
+            "1 Team Member",
+        ],
+        "What You're Missing": [
+            "Unlimited Team Members",
+            "60,000+ Database Of All Historical Sponsors",
+        ],
+    };
+
+    return (
+        <Box
+            sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.10)",
+                padding: "20px",
+                borderRadius: "16px",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+            }}
+        >
+            <Typography
+                sx={{
+                    fontFamily: "Roboto, sans-serif",
+                    fontWeight: "400",
+                    marginBottom: "25px",
+                    fontSize: "20px",
+                }}
+            >
+                {startupPlan?.name}
+            </Typography>
+            <Typography sx={{ marginBottom: "15px", display: "flex", gap: "8px" }}>
+                <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{
+                        textDecoration: "line-through",
+                        color: "#FFA114",
+                        marginRight: "5px",
+                        fontSize: "20px",
+                        fontWeight: "bolder",
+                    }}
+                >
+                    $497
+                </Typography>
+                <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{
+                        fontFamily: "Roboto, sans-serif",
+                        fontWeight: "bolder",
+                        fontSize: "32px",
+                    }}
+                >
+                    {startupPlan?.price}
+                </Typography>
+
+                <Typography variant="body1" component="span">
+                    /mo
+                </Typography>
+            </Typography>
+            <Box
+                sx={{
+                    fontSize: "14px",
+                    fontWeight: "800",
+                    marginY: 3,
+                }}
+            >
+                (-50+% First Year Discount)
+            </Box>
+            <Box>
+                {startupPlan?.keyFeatures?.map((item, index) => (
+                    <Box
+                        key={index}
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            marginBottom: "10px",
+                            lineHeight: "1.5",
+                            fontFamily: "Roboto, sans-serif",
+                            fontWeight: "400",
+                        }}
+                    >
+                        <CheckIcon
+                            sx={{ color: "#FFA114", width: "17px", height: "17px" }}
+                        />
+                        {item}
+                    </Box>
+                ))}
+            </Box>
+            <hr style={{ margin: "10px 0" }} />
+            <Box>
+                <Typography sx={{ color: "red", marginBottom: "10px" }}>
+                    What You're Missing
+                </Typography>
+                {startupPlan["What You're Missing"]?.map((item, index) => (
+                    <Box
+                        key={index}
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            marginBottom: "10px",
+                            lineHeight: "1.5",
+                            fontFamily: "Roboto, sans-serif",
+                            fontWeight: "400",
+                        }}
+                    >
+                        <CloseIcon sx={{ width: "17px", height: "17px" }} />
+                        {item}
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+    );
+};
+
+const ProPlan = () => {
+    const proPlan = {
+        name: "Pro Plan",
+        price: "$247",
+        keyFeatures: [
+            "Direct Contact Details Of The Top 10,000 YouTube Channel Sponsors in 30 languages Every Month",
+            "20+ Data Points Per Sponsor",
+            "CEO Contact Details & Social Media Profiles",
+            "Additional Decision Maker Details (CFOs, CMOs, Head Of Partnerships, Etc.)",
+            "First Access To New Sponsors",
+            "Email Support",
+            "Access To Our Entire Network Of Partners Who Have Actively Contacted Us To Be Your Long-Term Partner",
+            "1 Team Member",
+            "60,000+ Database Of All Historical Sponsors",
+            "3 Team Members",
+        ],
+        "What You're Missing": ["Unlimited Team Members"],
+    };
+
+    return (
+        <Box
+            sx={{
+                backgroundColor: "#2A1D91",
+                padding: "20px",
+                borderRadius: "16px",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+            }}
+        >
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                }}
+            >
+                <Typography
+                    sx={{
+                        fontWeight: "400",
+                        marginBottom: "25px",
+                        fontSize: "20px",
+                    }}
+                >
+                    {proPlan?.name}
+                </Typography>
+                <Typography
+                    sx={{
+                        fontWeight: "400",
+                        marginBottom: "25px",
+                        fontSize: "12px",
+                        borderRadius: "90.5px",
+                        backgroundColor: "white",
+                        padding: "5px 10px",
+                        color: "#FFA114",
+                    }}
+                >
+                    Most Popular
+                </Typography>
+            </Box>
+
+            <Typography sx={{ marginBottom: "15px", display: "flex", gap: "8px" }}>
+                <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{
+                        textDecoration: "line-through",
+                        color: "#FFA114",
+                        marginRight: "5px",
+                        fontSize: "20px",
+                        fontWeight: "bolder",
+                    }}
+                >
+                    $497
+                </Typography>
+                <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{
+                        fontFamily: "Roboto, sans-serif",
+                        fontWeight: "bolder",
+                        fontSize: "32px",
+                    }}
+                >
+                    {proPlan?.price}
+                </Typography>
+
+                <Typography variant="body1" component="span">
+                    /mo
+                </Typography>
+            </Typography>
+            <Box
+                sx={{
+                    fontSize: "14px",
+                    fontWeight: "800",
+                    marginBottom: "10px",
+                    marginTop: 3
+                }}
+            >
+                (-50+% Discount Forever)
+            </Box>
+            <Box
+                sx={{
+                    fontSize: "16px",
+                    fontWeight: "800",
+                    marginBottom: 3,
+                    color: "#FFA114",
+                }}
+            >
+                Billed anually (Save $3000/year)
+            </Box>
+            <Box>
+                {proPlan?.keyFeatures?.map((item, index) => (
+                    <Box
+                        key={index}
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            marginBottom: "10px",
+                            lineHeight: "1.5",
+                            fontWeight: "400",
+                        }}
+                    >
+                        <CheckIcon
+                            sx={{ color: "#FFA114", width: "17px", height: "17px" }}
+                        />
+                        {item}
+                    </Box>
+                ))}
+            </Box>
+            <hr style={{ margin: "10px 0" }} />
+            <Box>
+                <Typography sx={{ color: "red", marginBottom: "10px" }}>
+                    What You're Missing
+                </Typography>
+                {proPlan["What You're Missing"]?.map((item, index) => (
+                    <Box
+                        key={index}
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            marginBottom: "10px",
+                            lineHeight: "1.5",
+
+                            fontWeight: "400",
+                        }}
+                    >
+                        <CloseIcon sx={{ width: "17px", height: "17px" }} />
+                        {item}
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+    );
+};
+
+const EnterprisePlan = () => {
+    const enterprisePlan = {
+        name: "Enterprise Plan",
+        price: "Everything included in the Pro Plan, Plus.",
+        keyFeatures: [
+            "Priority support and a dedicated account manager",
+            "Unlimited Team Members",
+            "API Access",
+            "Reseller Rights",
+            "As a creator: Access specific Youtube Channel sponsor tracking so you know who your competitors are getting sponsored by",
+            "As a brand: Access specific sponsor tracking so you know who your competitors are sponsoring",
+            "Historical sponsor trends and data insights",
+            "Creator network: Tap into thousands of the top Youtubers in the world and reach millions of engaged viewers.",
+            "Custom Solutions Based On Your Needs",
+        ],
+    };
+
+    return (
+        <Box
+            sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.10)",
+                padding: "20px",
+                borderRadius: "16px",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+            }}
+        >
+            <Typography
+                sx={{
+                    fontFamily: "Roboto, sans-serif",
+                    fontWeight: "400",
+                    marginBottom: "25px",
+                    fontSize: "20px",
+                }}
+            >
+                {enterprisePlan?.name}
+            </Typography>
+            <Typography sx={{ marginBottom: 4, width: "80%" }}>
+                <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{
+                        fontFamily: "Roboto, sans-serif",
+                        fontWeight: "bolder",
+                        fontSize: "16px",
+                        color: "#FFA114",
+
+                    }}
+                >
+                    {enterprisePlan?.price}
+                </Typography>
+            </Typography>
+            <Box>
+                {enterprisePlan?.keyFeatures?.map((item, index) => (
+                    <Box
+                        key={index}
+                        style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            marginBottom: "10px",
+                            lineHeight: "1.5",
+                            fontFamily: "Roboto, sans-serif",
+                            fontWeight: "400",
+                        }}
+                    >
+                        <CheckIcon
+                            sx={{ color: "#FFA114", width: "17px", height: "17px" }}
+                        />
+                        {item}
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+    );
+};

@@ -7,17 +7,14 @@ import {
     Link,
     Paper
 } from '@mui/material';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from 'react';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import AdCardColl from '../components/AdCardColl';
+
 export default function DashboardPage() {
     return (
         <div>
-            <Typography variant='h5'>Download the 1,000+ most active YouTube sponsors in 30 languages </Typography>
+            <Typography variant='h4' marginTop={5}>Download the 1,000+ most active YouTube sponsors in 30 languages </Typography>
             <SponsorSection />
             <Typography variant='h5' sx={{ marginTop: 2 }}>Download the historical Sponsorship Databases. </Typography>
             <SponsorSection />
@@ -38,12 +35,12 @@ const SponsorSection = () => {
                 borderRadius: '15px',
                 border: '1px solid',
                 borderColor: '#FFFFFF',
-                backgroundImage: 'linear-gradient(#191153, #382689)',
+                backgroundImage: 'linear-gradient(to left, #191153, #382689)',
                 padding: 5,
-                marginTop: 5
+                marginTop: 2
             }}
         >
-            <Typography sx={{ fontSize: '26px' }}>
+            <Typography sx={{ fontSize: '26px', fontWeight: '600' }}>
                 All Files
             </Typography>
             <Box
@@ -55,10 +52,10 @@ const SponsorSection = () => {
                 }}
             >
                 <Box display="flex" justifyContent="space-between">
-                    <Typography variant="body1" fontWeight="bold" color="#FFA51F" flex={2 / 3}>
+                    <Typography variant="body1" fontWeight="500" color="#FFA51F" flex={2 / 3}>
                         Download Sponsors
                     </Typography>
-                    <Typography variant="body1" fontWeight="bold" color="#FFA51F" flex={1 / 3}>
+                    <Typography variant="body1" fontWeight="500" color="#FFA51F" flex={1 / 3}>
                         Date
                     </Typography>
                 </Box>
@@ -67,8 +64,8 @@ const SponsorSection = () => {
                     <Box
                         mt={2}
                         bgcolor="rgba(255, 255, 255, 0.1)"
-                        borderRadius={2}
-                        p={2}
+                        borderRadius={4}
+                        p={3}
                         color="#CAC4C4"
                     >
                         <Box display="flex" justifyContent="space-between" key={item.name} sx={{
@@ -109,21 +106,20 @@ const MidSection = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     color: 'white',
-
                     borderColor: '#FFFFFF',
                     gap: 3,
                     lineHeight: 1.5,
                 }}
             >
-                <Typography variant="body1" fontWeight="bold" sx={{ fontSize: '28px', marginY: 2 }}>
+                <Typography variant="body1" fontWeight="bold" sx={{ fontSize: '28px', marginTop: 7, marginBottom: 2 }}>
                     Give <span style={{ color: '#FFA51F' }}>ConnectSponsors.Com</span> to your friends!
                 </Typography>
 
                 <Paper
                     elevation={3}
                     sx={{
-                        width: '100%',
-                        background: 'linear-gradient(to right, #191153, #382689)',
+                        width: '70%',
+                        background: 'linear-gradient(to left, #191153, #382689)',
                         color: 'white',
                         textAlign: 'center',
                         border: '1px solid',
@@ -131,6 +127,7 @@ const MidSection = () => {
                         paddingY: 3,
                         '& .MuiTypography-root': {
                             lineHeight: '24px',
+                            textAlign: 'center',
                         },
 
                     }}
@@ -140,10 +137,14 @@ const MidSection = () => {
                     </Typography>
 
                     <Typography variant="h5" sx={{ my: 1, fontSize: "22px", fontWeight: 500 }}>
-                        Give 50% Off Year 1, Earn 50% Commissions for Life—Double After Year 1!
+                        Give 50% Off Year 1, Earn 50%
+                        <Typography variant="h5" sx={{ my: 1, fontSize: "22px", fontWeight: 500 }}>
+
+                            Commissions for Life—Double After Year 1!
+                        </Typography>
                     </Typography>
 
-                    <Typography variant="body2" sx={{ p: 1, fontSize: "16px" }}>
+                    <Typography variant="body2" sx={{ p: 1, fontSize: "16px", lineHeight: 2 }}>
                         Offer your friends 50% off their first year of ConnectSponsors.com on both our Startup and Pro plans. Earn $124.25/month or $1248.50/year for Year 1, and double that in commissions for every year after.
                     </Typography>
 
@@ -156,6 +157,7 @@ const MidSection = () => {
                             gap: 1,
                             '& .MuiTypography-root': {
                                 fontSize: '15px',
+                                lineHeight: 1.8,
                             },
                         }}
                     >
@@ -167,13 +169,13 @@ const MidSection = () => {
                             This is one of the most generous affiliate programs available—but it won't last forever. Lock in your spot now and start building lifetime recurring revenue.
                         </Typography>
 
-                        <Typography>
+                        <Typography paddingX={3}>
                             Affiliates are already seeing long-term success, generating consistent passive income from our program. Don't miss your chance to secure lifetime earnings from your referrals.
                         </Typography>
                     </Box>
 
-                    <Typography fontWeight="bold" sx={{ mt: 2, fontSize: "20px" }}>
-                        Your affiliate link
+                    <Typography fontWeight="600" sx={{ mt: 2, fontSize: "20px" }}>
+                        Your Affiliate link
                     </Typography>
 
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, p: 1, justifyContent: "center" }}>
@@ -183,10 +185,10 @@ const MidSection = () => {
                             onChange={(e) => setAffiliateLink(e.target.value)}
                             placeholder='https://Get ConnectSponsors.com/c/YTVS49'
                             sx={{
-                                width: "50%",
+                                width: "65%",
                                 '& .MuiOutlinedInput-root': {
+                                    borderRadius: 4,
                                     backgroundColor: 'white',
-                                    borderRadius: '12px',
                                     color: 'black',
                                 }
                             }}
@@ -194,6 +196,8 @@ const MidSection = () => {
                         <Button
                             variant="contained"
                             sx={{
+                                marginLeft: 1,
+                                borderRadius: 4,
                                 backgroundColor: '#FFA51F',
                                 '&:hover': { backgroundColor: '#FFA51F' }
                             }}
@@ -203,12 +207,11 @@ const MidSection = () => {
                         <EditIcon />
                     </Box>
 
-                    <Box display="flex" justifyContent="center" sx={{ mt: 2 }}>
-                        {[<FacebookIcon />, <PinterestIcon />, <TwitterIcon />, <LinkedInIcon />].map((Icon, index) => (
+                    <Box display="flex" justifyContent="center" alignItems="center" gap={1} sx={{ mt: 2 }}>
+                        {['facebook.svg', 'pinterest.svg', 'twitter.svg', 'linkedin.svg'].map((icon, index) => (
                             <Box key={index} sx={{ mx: 1 }}>
-                                {Icon}
-                            </Box>
-                        ))}
+                                <Box component="img" src={`/icons/${icon}`} alt={icon.replace('.svg', '')} sx={{ width: '30px', height: '25px' }} />
+                            </Box>))}
                     </Box>
                 </Paper>
             </Box>
@@ -230,28 +233,28 @@ const BottomSection = () => {
         >
 
             <Box sx={{
-                width: "60%", padding: "10px", textAlign: "center", '& .MuiOutlinedInput-root': {
-                    lineHeight: 1.5
+                width: "90%", padding: "10px", margin: 3, textAlign: "center", '& .MuiOutlinedInput-root': {
+                    lineHeight: 1.5,
+                    textAlign: "center"
                 }
             }}>
-                <Typography variant="body1" fontWeight="bold" sx={{ fontSize: '28px', marginY: 2 }}>
+                <Typography variant="body1" fontWeight="bold" sx={{ fontSize: '28px', marginY: 2, lineHeight: 1.2 }}>
                     These sponsorship partners have actively contacted us to be your
 
-                    <span style={{ color: '#FFA51F' }}> long term sponsors</span>
+                    <span style={{ color: '#FFA51F' }}> long term sponsors </span>
                 </Typography>
 
-                <Typography variant="body1" sx={{ fontSize: '20px', marginY: 2 }}>
+                <Typography variant="body1" sx={{ fontSize: '18px', marginY: 2, lineHeight: 1.3 }}>
                     For better deals with our featured sponsorship partners: Feel free to contact them and mention that you came from “ConnectSponsors.com” (we take 0% of your negotiated deals)
                 </Typography>
-                <Typography>
+                <Typography lineHeight={2} fontSize={16}>
                     Your account does not have access to our Featured sponsorship partners
-                </Typography>
-                <Typography>
-                    <Link style={{ color: '#FFA51F' }}>
-
-                        Click here
-                    </Link>
-                    to gain access.
+                    <p>
+                        <Link style={{ color: '#FFA51F' }}>
+                            Click here &nbsp;
+                        </Link>
+                        to gain access.
+                    </p>
                 </Typography>
             </Box>
         </Box>
