@@ -81,7 +81,7 @@ const BillingPage: React.FC = () => {
                                     }
                                 }}
                             />
-                            <Box component="img" src="https://placehold.co/40x30/red/white" alt="Invoice" mx="auto" />
+                            <Box component="img" src="icons/images/cc_image.png" sx={{ width: 30, height: 30 }} alt="Invoice" mx="auto" />
                         </Box>
 
                         <Stack
@@ -268,7 +268,7 @@ const BillingPage: React.FC = () => {
                         <Typography gutterBottom>
                             You can download your paid invoices here
                         </Typography>
-                        <Box component="img" src="https://placehold.co/256" alt="Invoice" mx="auto" />
+                        <Box component="img" src="icons/images/box_image.png" alt="Invoice" sx={{ width: 256, height: 256 }} mx="auto" />
                     </CardContent>
                 </Card>
             </Box>
