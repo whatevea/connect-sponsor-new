@@ -23,7 +23,7 @@ const TeamPage = () => {
                 color: 'white',
                 p: 3,
                 borderRadius: 2,
-                '& > *': { my: 2 }
+                '& > *': {}
             }}
         >
             {/* Header */}
@@ -31,7 +31,7 @@ const TeamPage = () => {
                 <Typography variant="h4" fontWeight="bold">
                     Team
                 </Typography>
-                <Typography variant="body1" sx={{ py: 1, letterSpacing: 1 }}>
+                <Typography sx={{ py: 2, letterSpacing: 1, fontSize: 16 }}>
                     Manage who has access to this workspace.
                 </Typography>
             </Box>
@@ -46,13 +46,13 @@ const TeamPage = () => {
                 }}
             >
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                    <Typography variant="h6">Invite User</Typography>
-                    <Typography variant="h6" color="warning.main">
-                        User Limit: 1/1
+                    <Typography fontSize={18} fontWeight="bold" >Invite User</Typography>
+                    <Typography fontSize={18} fontWeight="bold" >
+                        User Limit: <span style={{ color: "#FFA51F" }} > 1/1 </span>
                     </Typography>
                 </Box>
 
-                <Typography variant="body2" sx={{ mb: 2 }}>
+                <Typography sx={{ mb: 2, fontSize: 15 }}>
                     The user you are creating will get an email with login details.
                 </Typography>
 
@@ -67,7 +67,9 @@ const TeamPage = () => {
                             '& .MuiOutlinedInput-root': {
                                 borderRadius: 2,
                                 backgroundColor: 'white',
-                                color: "black"
+                                color: "black",
+                                fontSize: 14
+
 
                             }
                         }}
@@ -83,7 +85,9 @@ const TeamPage = () => {
                             '& .MuiOutlinedInput-root': {
                                 borderRadius: 2,
                                 backgroundColor: 'white',
-                                color: "black"
+                                color: "black",
+                                fontSize: 14
+
                             }
                         }}
                     />
@@ -94,7 +98,9 @@ const TeamPage = () => {
                         sx={{
                             borderRadius: 2,
                             backgroundColor: 'white',
-                            color: "black"
+                            color: "black",
+                            fontSize: 14
+
 
                         }}
                     >
@@ -107,7 +113,7 @@ const TeamPage = () => {
                             backgroundColor: '#0E9E59',
                             borderRadius: 8,
                             minWidth: 100,
-                            py: 2,
+                            py: 1,
                             color: 'white',
                             '&:hover': { backgroundColor: '#0E7E49' }
                         }}
@@ -123,7 +129,8 @@ const TeamPage = () => {
                 sx={{
                     border: '1px solid rgba(255,255,255,0.2)',
                     borderRadius: 2,
-                    background: 'linear-gradient(to right, rgba(56, 38, 185, 0.42), transparent)'
+                    background: 'linear-gradient(to right, rgba(56, 38, 185, 0.42), transparent)',
+                    mt: 2
                 }}
             >
                 {/* Header Row */}
@@ -136,10 +143,10 @@ const TeamPage = () => {
                         px: 3
                     }}
                 >
-                    <Typography sx={{ width: '20%' }}>User</Typography>
-                    <Typography sx={{ width: '20%' }}>Email Address</Typography>
-                    <Typography sx={{ width: '20%' }}>User Type</Typography>
-                    <Typography sx={{ width: '16%' }}>Actions</Typography>
+                    <Typography sx={{ width: '20%', fontWeight: 600, fontSize: 18 }}>User</Typography>
+                    <Typography sx={{ width: '20%', fontWeight: 600, fontSize: 18 }}>Email Address</Typography>
+                    <Typography sx={{ width: '20%', fontWeight: 600, fontSize: 18 }}>User Type</Typography>
+                    <Typography sx={{ width: '16%', fontWeight: 600, fontSize: 18 }}>Actions</Typography>
                 </Box>
 
                 {/* Team Member Row */}
@@ -154,13 +161,13 @@ const TeamPage = () => {
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', width: '20%', gap: 2 }}>
                         <Avatar
-                            src="https://placehold.co/60x60/FFA51F/white"
+                            src="icons/images/tim_image.png"
                             alt="Person image"
                             sx={{ width: 60, height: 60 }}
                         />
-                        <Typography fontWeight="bold">Tim</Typography>
+                        <Typography fontWeight="bold" fontSize={16} >Tim</Typography>
                     </Box>
-                    <Typography sx={{ width: '20%', fontWeight: 'light' }}>
+                    <Typography sx={{ width: '20%', fontWeight: 'light', fontSize: 18 }}>
                         Tim@etsponsored.com
                     </Typography>
                     <Typography sx={{ width: '20%', fontWeight: 'light' }}>

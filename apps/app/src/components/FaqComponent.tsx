@@ -62,8 +62,8 @@ const FAQComponent = () => {
         <Box
             sx={{
                 color: 'white',
-                background: 'linear-gradient(to left, #191153, #3826B9)',
-                borderRadius: 2,
+                background: '(to left, #191153, #3826B9 )', borderRadius: 2,
+                border: "1px solid white",
                 p: 3
             }}
         >
@@ -113,7 +113,7 @@ const FAQComponent = () => {
                         <Typography>{faq.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography variant="body2">{faq.answer}</Typography>
+                        <Typography variant="body1">{faq.answer}</Typography>
                     </AccordionDetails>
                 </Accordion>
             ))}
