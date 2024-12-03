@@ -26,6 +26,8 @@ export const router: ReturnType<typeof createBrowserRouter> =
     createBrowserRouter([
         { path: ROUTE_PATHS.LOGIN, element: <LoginPage /> },
         { path: ROUTE_PATHS.FORGET_PASSWORD, element: <ForgetPasswordPage /> },
+        { path: ROUTE_PATHS.FAQ, element: <FaqPage /> },
+
         {
             path: "/",
             element: <ProtectedLayout />,
@@ -53,7 +55,6 @@ export const router: ReturnType<typeof createBrowserRouter> =
                 { path: ROUTE_PATHS.PRICE, element: <PricePage /> },
                 { path: ROUTE_PATHS.ACCOUNT, element: <AccountPage /> },
                 { path: ROUTE_PATHS.TEAM, element: <TeamPage /> },
-                { path: ROUTE_PATHS.FAQ, element: <FaqPage /> },
                 { path: ROUTE_PATHS.CONTACT_US, element: <ContactUsPage /> },
                 { path: ROUTE_PATHS.AFFILIATE, element: <AffiliatePage /> },
                 { path: ROUTE_PATHS.API, element: <ApiPage /> },
