@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
     Box,
     Typography,
-    Container,
+
     Grid,
     Paper,
     Avatar,
@@ -13,13 +13,11 @@ import {
     FormControlLabel,
     Radio
 } from '@mui/material';
-import StarIcon from '@mui/icons-material/Star';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const CancellationPage = () => {
     const [selectedReason, setSelectedReason] = useState('');
-    const [returnLikelihood, setReturnLikelihood] = useState(null);
     const [additionalFeedback, setAdditionalFeedback] = useState('');
 
     const cancellationReasons = [
@@ -245,8 +243,6 @@ const CancellationPage = () => {
                             <Typography>Absolutely will!</Typography>
                         </Box>
                         <Rating
-                            value={returnLikelihood}
-                            onChange={(event, newValue) => setReturnLikelihood(newValue)}
                             max={10}
                             sx={{ gap: 5 }}
                         />

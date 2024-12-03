@@ -7,7 +7,6 @@ import {
     Card,
     List,
     ListItem,
-    ListItemIcon,
     Rating,
     TextField,
     CardContent,
@@ -440,13 +439,12 @@ const RatingComponent = () => {
 }
 
 
-const PlanCard = ({ title, price, monthlyPrice, features }) => (
-    <Box
-        sx={{
-            bgcolor: "blue.700",
-            p: 2,
-            width: "100%",
-        }}
+const PlanCard = ({ title, price, monthlyPrice, features }: { title: string, price: string, monthlyPrice: string, features: string[] }) => (
+    <Box sx={{
+        bgcolor: "blue.700",
+        p: 2,
+        width: "100%",
+    }}
     >
         <Typography
             variant="body2"
