@@ -86,7 +86,7 @@ const CancellationPage = () => {
                         >
                             <Box display="flex" alignItems="center" gap={2} mb={2}>
                                 <Avatar
-                                    src="https://placehold.co/65x65"
+                                    src="icons/images/tim_image.png"
                                     sx={{ border: '2px solid', borderColor: 'primary.main' }}
                                 />
                                 <Box display="flex">
@@ -248,6 +248,7 @@ const CancellationPage = () => {
                             value={returnLikelihood}
                             onChange={(event, newValue) => setReturnLikelihood(newValue)}
                             max={10}
+                            sx={{ gap: 5 }}
                         />
                     </Grid>
                 </Grid>

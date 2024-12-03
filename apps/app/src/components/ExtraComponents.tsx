@@ -1,15 +1,19 @@
-import React from 'react';
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import {
     Box,
     Typography,
     Button,
     Avatar,
     Card,
-    CardContent,
+    List,
+    ListItem,
+    ListItemIcon,
     Rating,
     TextField,
+    CardContent,
     Stack
 } from '@mui/material';
+
 export default function ExtraComponents() {
     return (
         <div>
@@ -20,6 +24,7 @@ export default function ExtraComponents() {
             <div style={{ margin: '20px', width: "50%" }}>
                 <RatingComponent />
             </div>
+            <StartupPlanPopUp />
         </div>
     );
 }
@@ -432,4 +437,298 @@ const RatingComponent = () => {
             </Box>
         </Box >
     )
+}
+
+
+const PlanCard = ({ title, price, monthlyPrice, features }) => (
+    <Box
+        sx={{
+            bgcolor: "blue.700",
+            p: 2,
+            width: "100%",
+        }}
+    >
+        <Typography
+            variant="body2"
+            textAlign="center"
+            color="grey.300"
+            sx={{
+                fontSize: "19.33px",
+                lineHeight: "21.3px",
+                fontWeight: "800",
+            }}
+        >
+            {title}
+        </Typography>
+        <Typography
+            variant="h6"
+            textAlign="center"
+            fontWeight="bold"
+            sx={{
+                textDecoration: "line-through",
+            }}
+        >
+            {price}
+        </Typography>
+        <Typography
+            variant="body1"
+            component={"span"}
+            sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <Typography
+                variant="body1"
+                component={"span"}
+                sx={{
+                    fontSize: "30px",
+                    fontWeight: "800",
+                    color: "#E9901A",
+                    marginRight: "8px",
+                }}
+            >
+                {monthlyPrice}
+            </Typography>
+            <Typography component="span" variant="body1">
+                /Month
+            </Typography>
+        </Typography>
+        <List sx={{ mt: 2, display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            {features.map((feature, index) => (
+                <ListItem
+                    key={index}
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        fontSize: "10px",
+                        backgroundColor: "#E9901A",
+                        borderRadius: "12px",
+                        width: "47%",
+                        marginBottom: "5px",
+                    }}
+                >
+                    <CheckCircleIcon sx={{ color: "green", fontSize: 16, mr: 0.5 }} />
+                    <Typography>{feature}</Typography>
+                </ListItem>
+            ))}
+        </List>
+    </Box>
+);
+
+function StartupPlanPopUp() {
+    return (
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                bgcolor: "blue.900",
+                color: "white",
+            }}
+        >
+            <Box
+                sx={{
+                    bgcolor: "blue.800",
+                    borderRadius: 2,
+                    width: 581,
+                    height: 729,
+                    border: "1px solid white",
+                }}
+            >
+                <Box>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Typography
+                            variant="h4"
+                            component={"span"}
+                            fontWeight="800"
+                            textAlign="center"
+                            color="orange"
+                            mb={2}
+                            mt={4}
+                        >
+                            Connect
+                        </Typography>
+                        <Typography
+                            variant="h4"
+                            component={"span"}
+                            fontWeight="800"
+                            textAlign="center"
+                            color="orange.500"
+                            mb={2}
+                            mt={4}
+                        >
+                            Sponsors.Com
+                        </Typography>
+                    </Box>
+                    <Box sx={{ textAlign: "center" }}>
+                        <img
+                            src={"icons/images/uparrow_image.png"}
+                            alt="up arrow image"
+                            style={{
+                                width: "52px",
+                                height: "52px",
+                            }}
+                        />
+                    </Box>
+                    <Typography
+                        variant="body1"
+                        textAlign="center"
+                        fontWeight="800"
+                        fontSize="16px"
+                        lineHeight="14px"
+                        gutterBottom
+                        mt={1}
+                    >
+                        Upgrade Now For More Better Faster
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        textAlign="center"
+                        paddingX={11}
+                        fontSize="12.94px"
+                        lineHeight="19.91px"
+                        mt={1}
+                        gutterBottom
+                    >
+                        Upgrade Now More Credits, Brands, And Users; Achieve{" "}
+                        <Typography
+                            variant="body1"
+                            component={"span"}
+                            sx={{
+                                color: "orange",
+                            }}
+                        >
+                            Better Results
+                        </Typography>
+                        ; And Receive{" "}
+                        <Typography
+                            variant="body1"
+                            component={"span"}
+                            sx={{
+                                color: "orange",
+                            }}
+                        >
+                            Faster Support
+                        </Typography>
+                    </Typography>
+                </Box>
+                <hr
+                    style={{
+                        color: "white",
+                        width: "100%",
+                    }}
+                />
+                <Box
+                    sx={{
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                        gap: 2,
+                        mt: 2,
+                    }}
+                >
+                    <Box
+                        sx={{
+                            border: "1px solid white",
+                            borderRadius: "15px",
+                            position: "relative",
+                            left: "26px",
+                        }}
+                    >
+                        <PlanCard
+                            title="Current Plan"
+                            price="$510"
+                            monthlyPrice="$497"
+                            features={["10 Credits", "1 Brand", "2 Users", "Live Support"]}
+                        />
+                    </Box>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            mt: 2,
+                            // position: "relative",
+                            // top: "50%",
+                        }}
+                    >
+                        <img src={"icons/images/leftmost_arrow.png"} alt="left arrow" />
+                        <img src={"icons/images/middlearrow.png"} alt="middle arrow" />
+                        <img src={"icons/images/rightmostarrow.png"} alt="right arrow" />
+                    </Box>
+                    <Box
+                        sx={{
+                            border: "1px solid white",
+                            borderRadius: "15px",
+                            position: "relative",
+                            right: "23px",
+                        }}
+                    >
+                        <PlanCard
+                            title="New Plan"
+                            price="$510"
+                            monthlyPrice="$497"
+                            features={["100 Credits", "5 Brands", "20 Users", "Live Support"]}
+                        />
+                    </Box>
+                </Box>
+                <Box
+                    sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flexDirection: "column",
+                        mt: 2,
+                        gap: 2,
+                    }}
+                >
+                    <Button
+                        variant="contained"
+                        sx={{
+                            bgcolor: "green",
+                            mt: 3,
+                            width: "33%",
+                            fontWeight: "bold",
+                        }}
+                    >
+                        Confirm
+                    </Button>
+                    <Typography
+                        variant="caption"
+                        display="block"
+                        textAlign="center"
+                        color="grey.400"
+                        sx={{
+                            width: "70%",
+                            fontSize: "12px",
+                            fontWeight: "400",
+                        }}
+                    >
+                        Did You Know That You Get Two Months Free And A 50% Discount When
+                        You Select A New Plan
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            width: "50%",
+                            bgcolor: "orange.500",
+                            "&:hover": { bgcolor: "orange.600" },
+                            mt: 1,
+                            lineHeight: "18px",
+                            fontWeight: "500",
+                            fontSize: "15px",
+                        }}
+                    >
+                        Switch To Yearly Now: 0% Off
+                    </Button>
+                </Box>
+            </Box>
+        </Box>
+    );
 }
