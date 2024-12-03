@@ -64,6 +64,7 @@ const FAQComponent = () => {
                 color: 'white',
                 background: '(to left, #191153, #3826B9 )', borderRadius: 2,
                 border: "1px solid white",
+                mx: 12,
                 p: 3
             }}
         >
@@ -71,7 +72,7 @@ const FAQComponent = () => {
                 variant="h3"
                 sx={{
                     fontWeight: 'bold',
-                    mb: 2,
+                    mb: 5,
                     color: 'white'
                 }}
             >
@@ -110,10 +111,10 @@ const FAQComponent = () => {
                             }
                         }}
                     >
-                        <Typography>{faq.question}</Typography>
+                        <Typography sx={{ fontSize: 20 }}>{faq.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography variant="body1">{faq.answer}</Typography>
+                        <Typography sx={{ lineHeight: 1.5}}>{faq.answer}</Typography>
                     </AccordionDetails>
                 </Accordion>
             ))}
