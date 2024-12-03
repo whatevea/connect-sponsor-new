@@ -13,6 +13,7 @@ const FAQComponent = () => {
 
     const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
         setExpandedPanel(isExpanded ? panel : false);
+        console.log(`Expanded panel: ${event} `);
     };
 
     const faqData = [
@@ -114,7 +115,7 @@ const FAQComponent = () => {
                         <Typography sx={{ fontSize: 20 }}>{faq.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography sx={{ lineHeight: 1.5}}>{faq.answer}</Typography>
+                        <Typography sx={{ lineHeight: 1.5 }}>{faq.answer}</Typography>
                     </AccordionDetails>
                 </Accordion>
             ))}

@@ -1,31 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
     Box,
     Typography,
-    Container,
     TextField,
     Button,
     Stack,
     Paper,
-    IconButton,
     useMediaQuery,
     useTheme
 } from '@mui/material';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import EditIcon from '@mui/icons-material/Edit';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 const AffiliatePage = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const [affiliateLink, setAffiliateLink] = useState('https://ConnectSponsors.com/c/YTVS49');
 
-    const handleCopyLink = () => {
-        navigator.clipboard.writeText(affiliateLink);
-    };
 
     return (
         <Box
