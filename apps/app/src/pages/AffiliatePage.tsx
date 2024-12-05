@@ -9,7 +9,6 @@ import {
     useMediaQuery,
     useTheme
 } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
 
 
 const AffiliatePage = () => {

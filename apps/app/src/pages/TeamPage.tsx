@@ -7,7 +7,6 @@ import {
     Button,
     Select,
     MenuItem,
-    Avatar,
     IconButton
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
