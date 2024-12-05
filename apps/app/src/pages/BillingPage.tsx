@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import {
     Box,
     Button,
@@ -11,6 +11,15 @@ import {
 } from "@mui/material";
 
 const BillingPage: React.FC = () => {
+    const [cardNumber, setCardNumber] = useState('');
+    const handleCardNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        let value = event.target.value.replace(/\s/g, '');
+        if (value.length > 19) return;
+
+        // Format with spaces after every 4 digits
+        const formatted = value.replace(/(\d{4})/g, '$1 ').trim();
+        setCardNumber(formatted);
+    };
     return (
         <main>
             <Typography variant="h3" fontWeight="bold" gutterBottom my={5}>
@@ -47,6 +56,8 @@ const BillingPage: React.FC = () => {
                             <TextField
                                 placeholder="5294 9728 4444 2856"
                                 variant="standard"
+                                value={cardNumber}
+                                onChange={handleCardNumberChange}
                                 sx={{
                                     width: "80%",
                                     outline: "none",

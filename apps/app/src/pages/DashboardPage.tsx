@@ -14,9 +14,9 @@ export default function DashboardPage() {
     return (
         <div>
             <Typography variant='h4' marginTop={5}>Download the 1,000+ most active YouTube sponsors in 30 languages </Typography>
-            <SponsorSection />
+            <SponsorSection showLink={false} />
             <Typography variant='h5' sx={{ marginTop: 2 }}>Download the historical Sponsorship Databases. </Typography>
-            <SponsorSection />
+            <SponsorSection showLink={true} />
             <MidSection />
             <BottomSection />
             <AdCardColl />
@@ -24,7 +24,7 @@ export default function DashboardPage() {
     );
 }
 
-const SponsorSection = () => {
+const SponsorSection = ({ showLink }: { showLink: boolean }) => {
     const demoList = [
         { name: "Google Document", date: "2023/2/23" }
     ]
@@ -78,13 +78,13 @@ const SponsorSection = () => {
                     </Box>
                 ))
                 }
-                <Box mt={2} color="#fff" display={"none"}>
+                <Box mt={2} color="#fff" display={showLink ? "block" : "none"}>
                     <Typography variant="body1" marginY={2}>
                         This content is for Pro plan & Enterprise members only
                     </Typography>
                     <Typography variant="body1">
                         Please{' '}
-                        <Link href="#" underline="hover" color="#FFA51F">
+                        <Link href="/price" underline="hover" color="#FFA51F">
                             Click Here
                         </Link>{' '}
                         to gain access.
