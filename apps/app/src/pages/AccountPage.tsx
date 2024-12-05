@@ -308,6 +308,7 @@ const AccountComponent = () => {
                             px: 3,
                             py: 1,
                             fontSize: '15px',
+                            color:"white"
                         }}
                     >
                         Cancel Subscription
