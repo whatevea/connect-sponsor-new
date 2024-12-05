@@ -88,11 +88,15 @@ const AffiliatePage = () => {
                             <Box>
                                 <Button
                                     sx={{
-                                        display: 'inline',
+                                        // display: 'inline',
                                         backgroundColor: '#FFA51F',
                                         color: 'white',
                                         borderRadius: 8,
-                                        '&:hover': { backgroundColor: '#FFA51F' }
+                                        fontSize: 18,
+                                        paddingX: 2,
+                                        paddingY: 1,
+                                        textTransform: "none",
+                                        '&:hover': { backgroundColor: '#FFA51F' },
                                     }}
                                 >
                                     Start Earning Money

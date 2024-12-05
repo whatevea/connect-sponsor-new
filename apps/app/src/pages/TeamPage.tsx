@@ -160,17 +160,17 @@ const TeamPage = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', width: '20%', gap: 2 }}>
-                        <Avatar
+                        {/* <Avatar
                             src="icons/images/tim_image.png"
                             alt="Person image"
                             sx={{ width: 60, height: 60 }}
-                        />
+                        /> */}
                         <Typography fontWeight="bold" fontSize={16} >Tim</Typography>
                     </Box>
-                    <Typography sx={{ width: '20%', fontWeight: 'light', fontSize: 18 }}>
+                    <Typography sx={{ width: '20%', fontWeight: 'light', fontSize: 16 }}>
                         Tim@etsponsored.com
                     </Typography>
-                    <Typography sx={{ width: '20%', fontWeight: 'light' }}>
+                    <Typography sx={{ width: '20%', fontWeight: 'light', fontSize: 16 }}>
                         User
                     </Typography>
                     <Box sx={{ width: '16%' }}  >

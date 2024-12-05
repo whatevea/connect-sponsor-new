@@ -19,7 +19,7 @@ const HorizontalCard: React.FC<{ image: string; title: string; subtitle: string 
         >
             <Box
                 sx={{
-                    width: '15%',
+                    width: '12%',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
@@ -28,8 +28,8 @@ const HorizontalCard: React.FC<{ image: string; title: string; subtitle: string 
                 <CardMedia
                     component="img"
                     sx={{
-                        width: 60,
-                        height: 60
+                        width: 50,
+                        height: 50
                     }}
                     image={image}
                     alt="Messenger Logo"

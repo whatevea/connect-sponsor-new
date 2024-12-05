@@ -4,6 +4,8 @@ import {
     Typography,
     TextField,
 } from '@mui/material';
+import { Link } from '@repo/ui';
+
 import { useState } from 'react';
 import BillingPage from './BillingPage';
 const AccountPage = () => {
@@ -299,8 +301,7 @@ const AccountComponent = () => {
                 </Box>
 
                 <Box sx={{ flex: 1, textAlign: 'right' }}>
-                    <Button
-                        variant="contained"
+                    <Link href="/cancel" style={{ textDecoration: 'none' }}
                         sx={{
                             backgroundColor: '#FFA51F',
                             borderRadius: 8,
@@ -310,7 +311,7 @@ const AccountComponent = () => {
                         }}
                     >
                         Cancel Subscription
-                    </Button>
+                    </Link>
                 </Box>
             </Box>
         </>
