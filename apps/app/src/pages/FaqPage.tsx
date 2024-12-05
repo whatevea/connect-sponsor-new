@@ -38,9 +38,9 @@ export default function FaqPage() {
                             }}
                         >
                             <Box sx={{ mt: 0 }}>
-                                    <Box display="flex" justifyContent="center" alignItems="center" gap={1} sx={{ mt: 0 }}>
-                                        <Box component="img" src={`/icons/globe.svg`} alt={"globe icon"} sx={{ width: '20px', height: '15px' }} />
-                                    </Box>
+                                <Box display="flex" justifyContent="center" alignItems="center" gap={1} sx={{ mt: 0 }}>
+                                    <Box component="img" src={`/icons/globe.svg`} alt={"globe icon"} sx={{ width: '20px', height: '15px' }} />
+                                </Box>
                             </Box>
                             <Select
                                 defaultValue="English"
@@ -110,7 +110,7 @@ export default function FaqPage() {
                             <ArrowRightIcon />
                         </ButtonBase>
                         <Typography variant="body1" fontWeight="300">
-                            ConnectSponsors.com AI FAQs
+                            ConnectSponsors.com FAQs
                         </Typography>
                     </Box>
                     {/* Featured Icon */}

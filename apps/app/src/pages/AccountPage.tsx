@@ -4,51 +4,67 @@ import {
     Typography,
     TextField,
 } from '@mui/material';
-
+import { useState } from 'react';
+import BillingPage from './BillingPage';
 const AccountPage = () => {
+    const [activeTab, setActiveTab] = useState('account');
     return (
         <Box sx={{ backgroundColor: '#191153', color: 'white' }}>
-            {/* Tabs Section */}
-            <Box sx={{ display: 'flex', gap: 2, fontSize: '1.125rem' }}>
+
+            < Box sx={{ display: 'flex', gap: 2, fontSize: '1.125rem' }
+            }>
                 <Box
+                    onClick={() => setActiveTab('account')}
                     sx={{
+                        cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
                         gap: 2,
-                        backgroundColor: '#FFA51F',
+                        backgroundColor: activeTab === 'account' ? '#FFA51F' : 'transparent',
+                        border: activeTab === 'account' ? 'none' : '2px solid white',
                         borderRadius: 4,
                         p: 1,
                         px: 3,
+                        background: activeTab === 'account' ? '#FFA51F' : 'linear-gradient(to right, #3826B9, transparent)',
                     }}
                 >
                     <Typography>Account</Typography>
                     <img
-                        src="icons/images/account_icon.png"
+                        src="icons/accountsvg.svg"
                         alt="Account Icon"
                     />
                 </Box>
 
                 <Box
+                    onClick={() => setActiveTab('billing')}
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: 2,
-                        border: '2px solid',
-                        borderColor: 'white',
+                        backgroundColor: activeTab === 'billing' ? '#FFA51F' : 'transparent',
+                        border: activeTab === 'billing' ? 'none' : '2px solid white',
                         borderRadius: 4,
-                        background: 'linear-gradient(to right, #3826B96B, transparent)',
+                        background: activeTab === 'billing' ? '#FFA51F' : 'linear-gradient(to right, #3826B9, transparent)',
                         p: 1,
                         px: 3,
+                        cursor: 'pointer'
                     }}
                 >
                     <Typography>Billing</Typography>
                     <img
-                        src="icons/images/billing_icon.png"
+                        src="icons/billingsvg.svg"
                         alt="Billing Icon"
                     />
-                </Box>
-            </Box>
+                </Box>            </Box >
+            {activeTab === 'account' ? <AccountComponent /> : <BillingPage />}
+        </Box>)
+}
 
+
+const AccountComponent = () => {
+    return (
+
+        <>
             {/* Forms Section */}
             <Box sx={{ display: 'flex', gap: 2, py: 5 }}>
                 {/* Personal Information Section */}
@@ -297,7 +313,7 @@ const AccountPage = () => {
                     </Button>
                 </Box>
             </Box>
-        </Box>
+        </>
     );
 };
 

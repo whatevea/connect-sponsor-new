@@ -9,30 +9,11 @@ import {
     Card,
     CardContent,
 } from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const BillingPage: React.FC = () => {
     return (
         <main>
-            <Box display="flex" gap={5} py={5} fontSize="1.25rem">
-                <Button
-                    variant="outlined"
-                    endIcon={<AccountCircleIcon />}
-                    sx={{ borderRadius: "16px", px: 3, py: 1 }}
-                >
-                    Account
-                </Button>
-
-                <Button
-                    variant="contained"
-                    endIcon={<AccountCircleIcon />}
-                    sx={{ borderRadius: "16px", backgroundColor: "#E9901A", px: 3, py: 1 }}
-                >
-                    Billing
-                </Button>
-            </Box>
-
-            <Typography variant="h3" fontWeight="bold" gutterBottom>
+            <Typography variant="h3" fontWeight="bold" gutterBottom my={5}>
                 Plan and Billing
             </Typography>
 

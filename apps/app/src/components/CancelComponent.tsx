@@ -36,7 +36,7 @@ const CancellationPage = () => {
             sx={{
                 backgroundColor: '#191153',
                 color: 'white',
-                py: 10,
+                py: 5,
                 px: { xs: 2, md: 12 }
             }}
         >
@@ -44,12 +44,12 @@ const CancellationPage = () => {
             <Box textAlign="center" mb={5}>
                 <Typography
                     variant="h3"
-                    sx={{ fontWeight: 'bold', mb: 2 }}
+                    sx={{ fontWeight: 'bold', mb: 4 }}
                 >
                     <Box component="span" color="#FFA51F">Connect</Box>Sponsors.Com
                 </Typography>
-                <Typography>Tim, we're sad to let you go! We are hoping that you'd stay.</Typography>
-                <Typography color="#FFA51F">Let's sweeten the deal for you before you cancel</Typography>
+                <Typography fontSize={16} mb={1}>Tim, we're sad to let you go! We are hoping that you'd stay.</Typography>
+                <Typography color="#FFA51F" fontWeight={600} fontSize={17}>Let's sweeten the deal for you before you cancel</Typography>
             </Box>
 
             {/* Main Content Grid */}
@@ -60,14 +60,16 @@ const CancellationPage = () => {
                         sx={{
                             p: 4,
                             borderRadius: 4,
+                            border: '1px solid white',
                             background: 'linear-gradient(to right, rgba(56, 38, 185, 0.42), transparent)'
+
                         }}
                     >
-                        <Box textAlign="center" mb={3}>
-                            <Typography variant="h4" fontWeight="bold">
+                        <Box textAlign="center" mb={3} >
+                            <Typography variant="h2" fontWeight="bold" mb={2}>
                                 Get <Box component="span" color="#FFA51F">50%</Box> discount forever!
                             </Typography>
-                            <Typography variant="body1" px={3}>
+                            <Typography fontSize={18} fontWeight={500} px={3} lineHeight={1.2} letterSpacing={1}>
                                 Let ConnectSponsors.com pay for itself in your first sponsorship!
                             </Typography>
                         </Box>
@@ -76,10 +78,12 @@ const CancellationPage = () => {
                         <Paper
                             sx={{
                                 p: 3,
-                                mb: 3,
+                                mb: 7,
+                                mt: 2,
                                 bgcolor: 'white',
                                 color: 'black',
-                                borderRadius: 2
+                                borderRadius: 2,
+
                             }}
                         >
                             <Box display="flex" alignItems="center" gap={2} mb={2}>
@@ -91,8 +95,8 @@ const CancellationPage = () => {
                                     <Rating value={5} readOnly />
                                 </Box>
                             </Box>
-                            <Typography variant="caption">George reviewed ConnectSponsors.com</Typography>
-                            <Typography>
+                            <Typography fontSize={16} mb={1}>George reviewed ConnectSponsors.com</Typography>
+                            <Typography fontSize={18} fontWeight={500} lineHeight={1.5}>
                                 "Get ConnectSponsors.com paid for itself in my first month after securing multiple high-value sponsors with their data. The 50% first-year discount made it an absolute no-brainer!"
                             </Typography>
                         </Paper>
@@ -101,7 +105,7 @@ const CancellationPage = () => {
                             <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                                 Claim <Box component="span" sx={{ color: '#FFA51F' }}>50%</Box> Discount forever!
                             </Typography>
-                            <Typography sx={{ px: 4, fontSize: '1.125rem', letterSpacing: 'wider', lineHeight: '1.2', my: 2 }}>
+                            <Typography sx={{ px: 4, fontSize: '1.125rem', letterSpacing: 'wider', lineHeight: '1.4', my: 2 }}>
                                 9 out of 10 ConnectSponsors.com users say the sponsor leads paid for their subscriptions within the first few months, and we don't want you to miss out on this valuable opportunity!
                             </Typography>
                         </Box>
@@ -113,7 +117,8 @@ const CancellationPage = () => {
                                 backgroundColor: '#0E9E59',
                                 py: 2,
                                 borderRadius: 8,
-                                mt: 2
+                                mt: 2,
+                                mb: 1
                             }}
                         >
                             Claim 50% Discount Forever
@@ -127,6 +132,8 @@ const CancellationPage = () => {
                         sx={{
                             p: 4,
                             borderRadius: 4,
+                            border: '1px solid white',
+
                             background: 'linear-gradient(to right, rgba(56, 38, 185, 0.42), transparent)'
                         }}
                     >
@@ -157,16 +164,20 @@ const CancellationPage = () => {
                             }
                         ].map((item, index) => (
                             <Box key={index} display="flex" alignItems="start" gap={2} mb={3}>
-                                <Avatar
+                                <Box
+                                    component="img"
+                                    src={`/icons/cancel.svg`}
                                     sx={{
-                                        bgcolor: 'red',
                                         width: 30,
-                                        height: 30
+                                        height: 30,
+                                        mt: 1,
+                                        ml: 1
                                     }}
+
                                 />
                                 <Box>
                                     <Typography variant="h6">{item.title}</Typography>
-                                    <Typography variant="body2">{item.description}</Typography>
+                                    <Typography fontSize={17} lineHeight={1.2}>{item.description}</Typography>
                                 </Box>
                             </Box>
                         ))}

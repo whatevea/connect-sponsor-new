@@ -7,7 +7,6 @@ import {
     Link,
     Paper
 } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
 import { useState } from 'react';
 import AdCardColl from '../components/AdCardColl';
 
@@ -79,9 +78,10 @@ const SponsorSection = () => {
                     </Box>
                 ))
                 }
-                <Box mt={2} color="#fff">
+                <Box mt={2} color="#fff" display={"none"}>
                     <Typography variant="body1" marginY={2}>
-                        This content is for Pro plan & Enterprise members only        </Typography>
+                        This content is for Pro plan & Enterprise members only
+                    </Typography>
                     <Typography variant="body1">
                         Please{' '}
                         <Link href="#" underline="hover" color="#FFA51F">
@@ -145,8 +145,7 @@ const MidSection = () => {
                     </Typography>
 
                     <Typography variant="body2" sx={{ p: 1, fontSize: "16px", lineHeight: 2 }}>
-                        Offer your friends 50% off their first year of ConnectSponsors.com on both our Startup and Pro plans. Earn $124.25/month or $1248.50/year for Year 1, and double that in commissions for every year after.
-                    </Typography>
+                        Offer Your Friends 50% Off Their First Year Of ConnectSponsors.com On Both Our Startup And Pro Plans. Earn $124.25/Month Or $1248.50/Year For Year 1, And Double That In Commissions For Every Year After.                    </Typography>
 
                     <Box
                         sx={{
@@ -162,16 +161,13 @@ const MidSection = () => {
                         }}
                     >
                         <Typography>
-                            So after the first year, you'll be earning $248.50/month or $2498.50/year for as long as your referral stays!
+                            So After The First Year, You'll Be Earning $248.50/Month Or $2498.50/Year For As Long As Your Referral Stays!
                         </Typography>
-
                         <Typography>
-                            This is one of the most generous affiliate programs available—but it won't last forever. Lock in your spot now and start building lifetime recurring revenue.
-                        </Typography>
+                            This Is One Of The Most Generous Affiliate Programs Available—But It Won't Last Forever. Lock In Your Spot Now And Start Building Lifetime Recurring Revenue.                        </Typography>
 
                         <Typography paddingX={3}>
-                            Affiliates are already seeing long-term success, generating consistent passive income from our program. Don't miss your chance to secure lifetime earnings from your referrals.
-                        </Typography>
+                            Affiliates Are Already Seeing Long-Term Success, Generating Consistent Passive Income From Our Program. Don't Miss Your Chance To Secure Lifetime Earnings From Your Referrals.                        </Typography>
                     </Box>
 
                     <Typography fontWeight="600" sx={{ mt: 2, fontSize: "20px" }}>
@@ -199,12 +195,14 @@ const MidSection = () => {
                                 marginLeft: 1,
                                 borderRadius: 4,
                                 backgroundColor: '#FFA51F',
-                                '&:hover': { backgroundColor: '#FFA51F' }
+                                '&:hover': { backgroundColor: '#FFA51F' },
+                                fontWeight: 500,
+                                border: '1px solid white',
                             }}
                         >
                             Copy
                         </Button>
-                        <EditIcon />
+                        <Box component="img" src="/icons/pencil.svg" alt="copy" sx={{ width: '30px', height: '30px' }} />
                     </Box>
 
                     <Box display="flex" justifyContent="center" alignItems="center" gap={1} sx={{ mt: 2 }}>
@@ -245,7 +243,7 @@ const BottomSection = () => {
                 </Typography>
 
                 <Typography variant="body1" sx={{ fontSize: '18px', marginY: 2, lineHeight: 1.3 }}>
-                    For better deals with our featured sponsorship partners: Feel free to contact them and mention that you came from “ConnectSponsors.com” (we take 0% of your negotiated deals)
+                    For Better Deals With Our Featured Sponsorship Partners: Feel Free To Contact Them And Mention That You Came From "ConnectSponsors.com" (We Take 0% Of Your Negotiated Deals)
                 </Typography>
                 <Typography lineHeight={2} fontSize={16}>
                     Your account does not have access to our Featured sponsorship partners
