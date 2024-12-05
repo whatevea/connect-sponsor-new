@@ -22,11 +22,11 @@ const BillingPage: React.FC = () => {
     };
     return (
         <main>
-            <Typography variant="h3" fontWeight="bold" gutterBottom my={5}>
+            <Typography variant="h4" fontWeight="bold" gutterBottom mt={5} pb={1.5}>
                 Plan and Billing
             </Typography>
 
-            <Box display="flex">
+            <Box display="flex" gap={2} >
                 {/* Card Information Form */}
                 <Card
                     sx={{
@@ -35,23 +35,24 @@ const BillingPage: React.FC = () => {
                         borderRadius: "16px",
                         backgroundColor: "#191153",
                         color: "white",
-                        py: 2,
+                        pt: 2,
                         textAlign: "center",
+                        background: 'linear-gradient(to right, rgba(56, 38, 185, 0.42), transparent)',
                     }}
                 >
-                    <CardContent>
-                        <Typography variant="h4" fontWeight="bold" py={2}>
+                    <CardContent sx={{ px: 5, }}>
+                        <Typography variant="h5" fontWeight="bold">
                             Card Information
                         </Typography>
-                        <Typography variant="body1" gutterBottom>
+                        <Typography variant="body1" py={1} pb={2} gutterBottom>
                             You can change your Card information in the field below
                         </Typography>
                         <Box
                             sx={{
                                 backgroundColor: "white",
                                 borderRadius: "8px",
-                                py: 1.5,
-                                mb: 1.5,
+                                py: 1,
+                                mb: 2,
                             }}>
                             <TextField
                                 placeholder="5294 9728 4444 2856"
@@ -79,7 +80,7 @@ const BillingPage: React.FC = () => {
                         <Stack
                             direction="row"
                             spacing={2}
-                            pb={3}
+                            pb={2}
                             justifyContent="space-between"
                         >
                             <TextField
@@ -105,19 +106,19 @@ const BillingPage: React.FC = () => {
                             />
                         </Stack>
 
-                        <Typography variant="body1" gutterBottom sx={{ textAlign: "center" }}>
+                        <Typography variant="body1" gutterBottom sx={{ textAlign: "center", fontSize: 14 }}>
                             Be Charged during 7 days Free Trials
                         </Typography>
 
-                        <Typography variant="h4" fontWeight="bold" py={2}>
+                        <Typography variant="h5" fontWeight="bold" pt={2}>
                             Billing Information
                         </Typography>
-                        <Typography variant="body1" gutterBottom my={2}>
+                        <Typography variant="body1" gutterBottom my={1} pb={1.5}>
                             You can change your billing information in the field below
                         </Typography>
 
-                        <Box pb={2}>
-                            <Stack spacing={2} pb={2}>
+                        <Box>
+                            <Stack spacing={2} pb={0.5}>
                                 <Stack direction="row" spacing={2}>
                                     <Box width="50%">
                                         <Typography textAlign="left" mb={1}>Full Address *</Typography>
@@ -191,10 +192,10 @@ const BillingPage: React.FC = () => {
                                 </Box>
                             </Stack>
 
-                            <Box display="flex" justifyContent="center" py={2}>
+                            <Box display="flex" justifyContent="center" pt={2}>
                                 <Button
                                     variant="contained"
-                                    sx={{ backgroundColor: "#E9901A", borderRadius: "24px", px: 5 }}
+                                    sx={{ backgroundColor: "#E9901A", borderRadius: "24px", px: 6 }}
                                 >
                                     Save Changes
                                 </Button>
@@ -209,17 +210,17 @@ const BillingPage: React.FC = () => {
                         width: "50%",
                         border: 2,
                         borderRadius: "16px",
-                        background: "linear-gradient(to right, #191153, #191153)",
+                        background: 'linear-gradient(to right, rgba(56, 38, 185, 0.42), transparent)',
                         color: "white",
-                        pt: 2,
+                        pt: 1,
                         textAlign: "center",
                     }}
                 >
                     <CardContent>
-                        <Typography variant="h4" fontWeight="bold" py={2}>
-                            Upcoming Invoice
+                        <Typography variant="h5" fontWeight="bold" py={2}>
+                            Upcoming Invoice in 9 months.
                         </Typography>
-                        <Typography variant="body1" gutterBottom>
+                        <Typography variant="body1" pb={5} gutterBottom>
                             This is the preview of the invoice that will be billed
                         </Typography>
                         <Box
@@ -227,8 +228,8 @@ const BillingPage: React.FC = () => {
                                 backgroundColor: "rgba(255, 255, 255, 0.1)",
                                 borderRadius: "12px",
                                 p: 3,
-                                mx: 2,
-                                my: 3,
+                                mx: 4.4,
+                                my: 0,
                             }}
                         >
                             <Box
@@ -254,13 +255,13 @@ const BillingPage: React.FC = () => {
                                 <Typography color="orange">$29</Typography>
                             </Box>
                         </Box>
-                        <Typography variant="h4" fontWeight="bold" py={2}>
+                        <Typography variant="h6" fontWeight="bold" py={1}>
                             Paid Invoice
                         </Typography>
                         <Typography gutterBottom>
                             You can download your paid invoices here
                         </Typography>
-                        <Box component="img" src="icons/images/box_image.png" alt="Invoice" sx={{ width: 256, height: 256 }} mx="auto" />
+                        <Box component="img" src="icons/images/box_image.png" alt="Invoice" sx={{ width: 115, height: 115, pt: 1 }} mx="auto" />
                     </CardContent>
                 </Card>
             </Box>
