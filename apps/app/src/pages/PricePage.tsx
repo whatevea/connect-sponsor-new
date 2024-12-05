@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -278,6 +278,24 @@ const StartupPlan = () => {
                         {item}
                     </Box>
                 ))}
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Button
+                        sx={{
+                            backgroundColor: '#E9901A',
+                            paddingX: 6,
+                            paddingY: 1.3,
+                            borderRadius: 10,
+                            marginTop: 14
+                        }}
+                    >
+                        Confirm Upgrade
+                    </Button>
+                </Box>
             </Box>
         </Box>
     );
@@ -434,6 +452,24 @@ const ProPlan = () => {
                         {item}
                     </Box>
                 ))}
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Button
+                        sx={{
+                            backgroundColor: '#E9901A',
+                            paddingX: 6,
+                            paddingY: 1.3,
+                            borderRadius: 10,
+                            marginTop: 4
+                        }}
+                    >
+                        Confirm Upgrade
+                    </Button>
+                </Box>
             </Box>
         </Box>
     );
@@ -510,6 +546,24 @@ const EnterprisePlan = () => {
                         {item}
                     </Box>
                 ))}
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Button
+                        sx={{
+                            backgroundColor: '#E9901A',
+                            paddingX: 6,
+                            paddingY: 1.3,
+                            borderRadius: 10,
+                            marginTop: 24.5
+                        }}
+                    >
+                        Confirm Upgrade
+                    </Button>
+                </Box>
             </Box>
         </Box>
     );
