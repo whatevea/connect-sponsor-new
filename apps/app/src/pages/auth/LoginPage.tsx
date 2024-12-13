@@ -203,6 +203,8 @@ export default function LoginPage() {
               Don’t you have an account?
             </Typography>
             <Button
+            component={Link}
+            href='/signup'
               sx={{
                 textTransform: 'capitalize',
                 color: '#FFA51F',
