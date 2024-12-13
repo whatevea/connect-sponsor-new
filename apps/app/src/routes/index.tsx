@@ -21,13 +21,13 @@ import ForgetPasswordPage from "../pages/auth/ForgetPasswordPage";
 import CancellationPage from "../components/CancelComponent";
 import ExtraComponents from "../components/ExtraComponents";
 import BillingPage from "../pages/BillingPage";
-
+import SignupPage from "../pages/auth/SignUpPage";
 export const router: ReturnType<typeof createBrowserRouter> =
     createBrowserRouter([
         { path: ROUTE_PATHS.LOGIN, element: <LoginPage /> },
         { path: ROUTE_PATHS.FORGET_PASSWORD, element: <ForgetPasswordPage /> },
         { path: ROUTE_PATHS.FAQ, element: <FaqPage /> },
-
+        {path:ROUTE_PATHS.SIGNUP, element: <SignupPage />},
         {
             path: "/",
             element: <ProtectedLayout />,

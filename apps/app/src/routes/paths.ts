@@ -1,7 +1,7 @@
 export const ROUTE_PATHS = Object.freeze({
     LOGIN: "/login",
     FORGET_PASSWORD: "/forgot",
-
+    SIGNUP: "/signup",
     // HEADER NAVS
     PRICE: "/price",
     ACCOUNT: "/account",
