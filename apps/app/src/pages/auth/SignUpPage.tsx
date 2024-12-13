@@ -1,78 +1,154 @@
-import { Box, Card, CardActions, CardContent, Typography } from '@mui/material';
-import { Button, Link } from '@repo/ui';
-import { CONNECT_SPONSOR_TOKEN } from '../../constants';
-import { ROUTE_PATHS } from '../../routes/paths';
+import { Box, Button, Typography, Divider, TextField } from "@mui/material";
 
-export default function SignUpPage() {
-    return (
+const ConnectSponsors = () => {
+  return (
+    <Box
+      sx={{
+        backgroundColor: "#191153",
+        color: "white",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+        padding: 3,
+      }}
+    >
+      <Box sx={{ width: "33%", textAlign: "center", display: "flex", flexDirection: "column", gap: 3 }}>
+        {/* Header Section */}
+        <Typography variant="h4" fontWeight="bold">
+          <Typography component="span" variant="h4" color="#FFA51F">
+            Connect
+          </Typography>
+          Sponsors.Com
+        </Typography>
+
+        {/* Login Form Section */}
         <Box
-            sx={{
-                width: '100%',
-                height: '100vh',
-                display: 'grid',
-                placeItems: 'center',
-            }}
+          sx={{
+            border: "1px solid",
+            borderColor: "#3826B96B",
+            p: 3,
+            borderRadius: 2,
+            background: "linear-gradient(to right, #3826B96B, transparent)",
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
         >
-            <Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography variant='h4' color='secondary'>
-                        Connect
-                    </Typography>
-                    <Typography variant='h4'>Sponsors.com</Typography>
-                </Box>
+          <Typography variant="h5" fontWeight="bold">
+            #1 most used tool to find & convert sponsorship opportunities
+          </Typography>
+          <Typography color="#FFA51F" 
+          sx={{ fontSize: 18, lineHeight: 1.5, paddingX: 2 }}
+          >
+            Sign up & get free access to the 1,000+ most active Youtube Sponsors in 30 languages
+          </Typography>
 
-                <Card
-                    sx={{
-                        borderRadius: '16px',
-                        minWidth: 500,
-                        background:
-                            'linear-gradient(270.1deg, #191153 0.77%, rgba(56, 38, 185, 0.42) 99.92%)',
+          {/* Login Buttons */}
+          <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+            <Button
+              fullWidth
+              sx={{ backgroundColor: "white", color: "black", textTransform: 'none' }}
 
-                        border: '1px solid #fff',
-                        padding: '1rem',
-                    }}
-                >
-                    <CardContent
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '1.5rem',
-                            textAlign: 'center',
-                        }}
-                    >
-                        <Typography variant='h4' sx={{ fontWeight: 700 }}>
-                            #1 most used tool to find & convert <br /> sponsorship
-                            opportunities
-                        </Typography>
+            >
+              Login with Google
+              {<img style={{ paddingLeft: 20, padding: 10 }} src="icons/images/googleIcon.png" alt="google-icon" />}
+            </Button>
+            <Button
+              fullWidth
+              sx={{ backgroundColor: "white", color: "black", textTransform: 'none' }}
+            >
+              Login with Microsoft
+              {<img style={{ padding: 10 }} src="icons/images/m_windowsIcon.png" alt="google-icon" />}
+            </Button>
+          </Box>
 
-                        <Typography variant='h6' lineHeight={1.5} color='text.secondary'>
-                            Sign up & get free access to the 1,000+ most <br /> active Youtube
-                            Sponsors in 30 languages
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size='small'>Learn More</Button>
-                    </CardActions>
-                </Card>
+          {/* Divider */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              width: "100%",
+              justifyContent: "center",
+              gap: 1,
+              padding: "10px 0",
+            }}
+          >
+            <Divider sx={{ flex: 1, borderColor: "#FFFFFF80" }} />
+            <Typography sx={{ color: "#FFFFFF80", padding: "0 10px" }}>or</Typography>
+            <Divider sx={{ flex: 1, borderColor: "#FFFFFF80" }} />
+          </Box>
 
-                <Button
-                    onClick={() => {
-                        localStorage.setItem(CONNECT_SPONSOR_TOKEN, 'jwt-token-123');
-                    }}
-                    component={Link}
-                    href={ROUTE_PATHS.DASHBOARD}
-                    variant='contained'
-                    color='secondary'
-                    sx={{ px: '3rem', fontWeight: 600 }}
-                >
-                    Login App
-                </Button>
+          {/* Input Fields */}
+          <Box>
+            <TextField
+              fullWidth
+              variant="outlined"
+              type="password"
+              placeholder="Password *"
 
-                <Box>
-                    <Typography>Don’t you have an account?</Typography>
-                    <Button>Sign up</Button>
-                </Box>
-            </Box>
+              sx={{ mb: 2, 
+                backgroundColor: "white", 
+                borderRadius: 1, 
+                "& .MuiInputBase-input": { color: "black" }, 
+               }}
+            />
+            <TextField
+              fullWidth
+              variant="outlined"
+              type="email"
+              placeholder="Email"
+
+              sx={{ backgroundColor: "white", 
+                borderRadius: 1,     
+                "& .MuiInputBase-input": { color: "black" },  }}
+            />
+          </Box>
+
+          {/* Terms of Use */}
+          <Typography sx={{ mt: 1 }}>
+            By registering you agree to our
+            <Typography
+              component="a"
+              href="#"
+              sx={{ 
+                color: "#FFA51F", 
+                textDecoration: "none", 
+                ml: 0.5, 
+                ":hover": {
+                  textDecoration: 'underline'
+                } }}
+            >
+              terms of use.
+            </Typography>
+          </Typography>
         </Box>
-    );
-}
+
+        {/* Sign Up Button and Footer */}
+        <Box sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 2, paddingX: 3 }}>
+          <Button
+            fullWidth
+            sx={{
+              backgroundColor: "#0E9E59",
+              color: "white",
+              padding: 1,
+              borderRadius: 50,
+              fontWeight: "bold",
+              textTransform: "none",
+              fontSize: 25,
+
+            }}
+          >
+            Sign up
+          </Button>
+          <Typography sx={{ paddingX: 5 }}>
+            And get free access to the 1,000+ most active Youtube Sponsors in 30 languages
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+export default ConnectSponsors;
+
