@@ -24,4 +24,5 @@ export const ROUTE_PATHS = Object.freeze({
     CANCEL: "/cancel",
     EXTRA: "/extra",
     BILLING: "/billing",
+    PAYMENT_DETAIL: "/payment-detail",
 });
